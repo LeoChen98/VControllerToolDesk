@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VControllerToolDesk", "VControllerToolDesk\VControllerToolDesk.csproj", "{25890C21-96C5-46AB-83E2-E0CCFCA3DD91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25890C21-96C5-46AB-83E2-E0CCFCA3DD91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25890C21-96C5-46AB-83E2-E0CCFCA3DD91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25890C21-96C5-46AB-83E2-E0CCFCA3DD91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25890C21-96C5-46AB-83E2-E0CCFCA3DD91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C275E860-6439-4870-8085-B9E44026D4D1}
+	EndGlobalSection
+EndGlobal
