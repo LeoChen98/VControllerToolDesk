@@ -1,6 +1,6 @@
 # VControllerToolDesk
 
-一个为VATSIM管制员搭建的综合性工具 | [English Readme >>](README.md)
+一个为VATSIM管制员搭建的综合性工具 | [English Readme >>](README.md)<br>
 **\* 中文文档可能由于其他代码贡献者不熟悉中文而有更新延迟，请以[英文文档](README.md)为准**
 
 ## 兼容性
