@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="VControllerToolDesk.View.UserControl.RightTopBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VControllerToolDesk.View.UserControl"
+             xmlns:vm="clr-namespace:VControllerToolDesk.ViewModel"
+             mc:Ignorable="d" 
+             MinHeight="16" MaxHeight="16" MinWidth="16" MaxWidth="48" x:Name="userControl" Foreground="Black">
+    <UserControl.Resources>
+        <local:WindowStateToContraryStringConverter x:Key="WindowStateToContraryStringConverter"/>
+        <local:WindowStateToContraryBtnPathDataConverter x:Key="WindowStateToContraryBtnPathDataConverter"/>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </UserControl.Resources>
+    <StackPanel Orientation="Horizontal">
+        <Button x:Name="Btn_MiniSize" Command="{Binding Source={x:Static vm:WindowBasicCommand.MiniSize}}" CommandParameter="{Binding RelativeSource={RelativeSource self}}" Width="16" Height="16" ToolTip="最小化" Visibility="{Binding ElementName=userControl,Path=IsMiniSizeSupported,Converter={StaticResource BooleanToVisibilityConverter}}" IsEnabled="{Binding ElementName=userControl,Path=IsMiniSizeEnabled}">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Canvas  Background="{Binding ElementName=userControl,Path=BtnBackground}">
+                        <Path Width="16" Height="16" Fill="{Binding ElementName=userControl,Path=Foreground}" StrokeThickness="1" Stroke="{Binding ElementName=userControl,Path=Foreground}" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round">
+                            <Path.Data>
+                                M4,8 L12,8
+                            </Path.Data>
+                        </Path>
+                    </Canvas>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="Btn_MaxSize" Command="{Binding Source={x:Static vm:WindowBasicCommand.MaxOrNormalSize}}" CommandParameter="{Binding RelativeSource={RelativeSource self}}" Width="16" Height="16" ToolTip="{Binding Tag, Converter={StaticResource WindowStateToContraryStringConverter}, ElementName=userControl}" Visibility="{Binding ElementName=userControl,Path=IsMaxSizeSupported,Converter={StaticResource BooleanToVisibilityConverter}}" IsEnabled="{Binding ElementName=userControl,Path=IsMaxSizeEnabled}">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Canvas  Background="{Binding ElementName=userControl,Path=BtnBackground}">
+                        <Path Width="16" Height="16" StrokeThickness="1" Stroke="{Binding ElementName=userControl,Path=Foreground}" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Data="{Binding Tag, Converter={StaticResource WindowStateToContraryBtnPathDataConverter}, ElementName=userControl}"/>
+                    </Canvas>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="Btn_Close" Command="{Binding Source={x:Static vm:WindowBasicCommand.Close}}" CommandParameter="{Binding RelativeSource={RelativeSource self}}" Width="16" Height="16" ToolTip="关闭" IsEnabled="{Binding ElementName=userControl,Path=IsCloseEnabled}">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Canvas Background="{Binding ElementName=userControl,Path=BtnBackground}">
+                        <Path Width="16" Height="16" Fill="{Binding ElementName=userControl,Path=Foreground}" StrokeThickness="1" Stroke="{Binding ElementName=userControl,Path=Foreground}" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round">
+                            <Path.Data>
+                                M4,4L12,12
+                                M4,12L12,4
+                            </Path.Data>
+                        </Path>
+                    </Canvas>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </StackPanel>
+</UserControl>

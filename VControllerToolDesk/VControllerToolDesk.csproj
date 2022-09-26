@@ -26,4 +26,12 @@
     <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Core\" />
+    <Folder Include="Helper\" />
+    <Folder Include="View\Window\" />
+    <Folder Include="View\Page\" />
+    <Folder Include="Settings\" />
+  </ItemGroup>
+
 </Project>
